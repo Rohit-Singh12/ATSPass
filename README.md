@@ -37,7 +37,7 @@ Now, you can locally test
  - FastAPI API: http://localhost:8000/
  - Ollama API: http://localhost:11434
 
-### **3️⃣ Stop Services **
+### **3️⃣ Stop Services**
 ```sh
 docker compose down
 ```
