@@ -4,9 +4,7 @@
 - [Project Overview](#project-overview)
 - [Prerequisites](#prerequisites)
 - [Running Locally (Docker Compose)](#running-locally-docker-compose)
-- [Deploying on Kubernetes (Minikube)](#deploying-on-kubernetes-minikube)
-- [Deploying on AWS EKS](#deploying-on-aws-eks)
-- [Managing Kubernetes Resources](#managing-kubernetes-resources)
+- [Deploying on Kubernetes](#deploying-on-aws-or-locally)
 
 ---
 
