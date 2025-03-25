@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from Resume import Resume
 
 app = FastAPI()
-resume = Resume('http://ollama:11434')
+resume = Resume('http://ollama-service:11434')
 class ResumeJobPayload(BaseModel):
     resume: str
     job_desc: str

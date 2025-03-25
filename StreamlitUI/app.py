@@ -5,17 +5,18 @@ import os
 from DocumentReader import DocumentReader
 
 # Backend API URL
-API_URL = "http://fastapi:8000/process_resume/"
+API_URL = "http://fastapi-service:8000/process_resume/"
 FILE_PATH = ""
 
 def write_to_location(uploaded_file):
-    global FILE_PATH  # Use the global variable
+    global FILE_PATH
     _, file_extension = os.path.splitext(uploaded_file.name)
     os.makedirs("/app/UploadedResumes", exist_ok=True)
     FILE_PATH = f'/app/UploadedResumes/resume{file_extension}'
     print(FILE_PATH)
     with open(FILE_PATH, "wb") as f:
         f.write(uploaded_file.getbuffer())
+
 
 st.title("📄 ATS Resume Scoring System")
 st.markdown("Upload your resume and enter a job description to get an ATS score.")
@@ -29,7 +30,6 @@ if st.button("Analyze Resume"):
         st.warning("Please upload a resume and enter a job description.")
     else:
         with st.spinner("⏳ Please wait... Processing resume..."):
-            
             try:
                 print("FILE PATH " + FILE_PATH)
                 write_to_location(uploaded_file)

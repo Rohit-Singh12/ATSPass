@@ -1,25 +1,27 @@
 version: "3.8"
 services:
-  ollama:
-    image: ollama/ollama
+  ollama-service:
+    build:
+      context: ./Ollama
+      dockerfile: Dockerfile
     ports: 
       - "11434:11434"
   
-  fastapi:
+  fastapi-service:
     build:
       context: ./FastAPI
       dockerfile: Dockerfile
     depends_on:
-      - ollama
+      - ollama-service
     ports:
       - "8000:8000"
     
-  streamlit:
+  streamlit-service:
     build:
       context: ./StreamlitUI
       dockerfile: Dockerfile
     depends_on:
-      - fastapi
+      - fastapi-service
     ports:
       - "8501:8501"
 
